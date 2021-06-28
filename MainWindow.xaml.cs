@@ -20,9 +20,18 @@ namespace ISRPO
     /// </summary>
     public partial class MainWindow : Window
     {
+        DatabaseEntities db;
         public MainWindow()
         {
             InitializeComponent();
+            db = new DatabaseEntities();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            BookingGrid.ItemsSource = db.Booking.ToList();
+            Row.ItemsSource = db.Row.ToList();
+            Place.ItemsSource = db.Place.ToList();
         }
     }
 }

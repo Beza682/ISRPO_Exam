@@ -6,8 +6,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ISRPO"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        
+        <DataGrid x:Name="BookingGrid" AutoGenerateColumns="False" Margin="10,10,345,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Row.name}" Header="Ряд" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Place.name}" Header="Место" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Status.name}" Header="Статус" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox Name="Row" materialDesign:HintAssist.Hint="Ряд" Margin="552,168,170,226"/>
+        <ComboBox Name="Place" materialDesign:HintAssist.Hint="Место" Margin="636,168,86,226"/>
+        <Button Content="Забронировать" Margin="552,209,86,178"/>
     </Grid>
 </Window>
