@@ -26,7 +26,17 @@ namespace ISRPO
             InitializeComponent();
             db = new DatabaseEntities();
         }
-
+        private void Click(object sender, RoutedEventArgs e)
+        {
+            Class cl = new Class();
+            if (cl.Add((Row.SelectedItem as Row).Id, (Place.SelectedItem as Place).Id) == true)
+            {
+                Row.SelectedIndex = -1;
+                Place.SelectedIndex = -1;
+                db = new DatabaseEntities();
+                BookingGrid.ItemsSource = db.Booking.ToList();
+            }
+        }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             BookingGrid.ItemsSource = db.Booking.ToList();

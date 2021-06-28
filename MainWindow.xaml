@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ISRPO"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Кинотеатр" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <DataGrid x:Name="BookingGrid" AutoGenerateColumns="False" Margin="10,10,345,10">
             <DataGrid.Columns>
@@ -15,8 +15,8 @@
                 <DataGridTextColumn Binding="{Binding Status.name}" Header="Статус" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <ComboBox Name="Row" materialDesign:HintAssist.Hint="Ряд" Margin="552,168,170,226"/>
-        <ComboBox Name="Place" materialDesign:HintAssist.Hint="Место" Margin="636,168,86,226"/>
-        <Button Content="Забронировать" Margin="552,209,86,178"/>
+        <ComboBox Name="Row" materialDesign:HintAssist.Hint="Ряд" Margin="0,168,170,0" DisplayMemberPath="name" VerticalAlignment="Top" HorizontalAlignment="Right" Width="70"/>
+        <ComboBox Name="Place" materialDesign:HintAssist.Hint="Место" Margin="0,168,86,0" DisplayMemberPath="name" VerticalAlignment="Top" HorizontalAlignment="Right" Width="70"/>
+        <Button Content="Забронировать" Click="Click" Margin="0,209,86,0" HorizontalAlignment="Right" Width="154" VerticalAlignment="Top"/>
     </Grid>
 </Window>
